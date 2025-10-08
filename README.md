@@ -1,2 +1,2 @@
-# My_Manim_Videos
-Source Codes of my Every manim videos
+# My Manim Videos
+Source Codes of my Every Manim videos
