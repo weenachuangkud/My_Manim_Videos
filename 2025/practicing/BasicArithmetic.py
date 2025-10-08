@@ -53,9 +53,8 @@ class BasicArithmetic(Scene):
         self.play(Transform(conclusion, Text("Let's see with Multiplication and Division", font_size=32)), run_time=1)
         self.play(FadeOut(conclusion), run_time=0.5)
 
-        #THIS LINE IS WHERE MATH WRONG
-        # I'm so lazy, so I'll just leave this
-        self.DifferenceOrderOperations(3, "*", 4, 1, 0.5)
+        # I'm so gurt!!!!
+        self.DifferenceOrderOperations(3, "-", 4, 1, 0.5)
         self.DifferenceOrderOperations(12, "/", 4, 1, 0.5)
         
         operations = [
@@ -80,8 +79,8 @@ class BasicArithmetic(Scene):
         self.play(FadeOut(title), FadeOut(subtitle), run_time=fadeOutSpeed)
         
     def DifferenceOrderOperations(self, a: int, operation: str, b: int, anim_speed: int | float, fadeoutSpeed: int | float) -> None:
-        if operation not in ["*", "/"]:
-            raise ValueError("Operation must be either multiplication or division")
+        if operation not in ["-", "/"]:
+            raise ValueError("Operation must be either minus or division")
         
         diff = MathTex(self.do_Operation(a, operation, b)).scale(1.5)
 
@@ -90,7 +89,7 @@ class BasicArithmetic(Scene):
         self.play(Write(position_label), Write(diff), run_time=anim_speed)
         self.wait(anim_speed)
 
-        expr = self.fracLatex(b, a) if operation == "/" else rf"{b} {self.timeLatex} {a}"
+        expr = self.fracLatex(b, a) if operation == "/" else f"{b} - {a}"
 
         swapped_expr = MathTex(expr, r"\neq", str(eval(f'{a} {operation} {b}'))).scale(1.5)
         swapped_expr.move_to(diff.get_center())
