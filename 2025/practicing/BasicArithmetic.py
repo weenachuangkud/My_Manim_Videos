@@ -26,7 +26,7 @@ class BasicArithmetic(Scene):
                 case _:
                     return f"{a} {operator} {b} = {result}"
         except Exception as e:
-            return f"Arithmetic Error: {e}"
+            return f"Error: {e}"
 
     def construct(self):
         operationStr  = ['+', '-', '*', '/']
@@ -91,10 +91,7 @@ class BasicArithmetic(Scene):
         expr = self.fracLatex(b, a) if operation == "/" else rf"{b} {self.timeLatex} {a}"
 
         swapped_expr = MathTex(expr, r"\neq", str(eval(f'{a} {operation} {b}'))).scale(1.5)
-                               
         swapped_expr.move_to(diff.get_center())
 
-
         self.play(Transform(diff, swapped_expr), run_time=anim_speed)
-        
         self.play(FadeOut(diff), FadeOut(position_label), run_time=fadeoutSpeed)
