@@ -53,6 +53,8 @@ class BasicArithmetic(Scene):
         self.play(Transform(conclusion, Text("Let's see with Multiplication and Division", font_size=32)), run_time=1)
         self.play(FadeOut(conclusion), run_time=0.5)
 
+        #THIS LINE IS WHERE MATH WRONG
+        # I'm so lazy, so I'll just leave this
         self.DifferenceOrderOperations(3, "*", 4, 1, 0.5)
         self.DifferenceOrderOperations(12, "/", 4, 1, 0.5)
         
