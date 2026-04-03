@@ -2,7 +2,7 @@
 # date  : 2025-06-20
 # description: Basic Arithmetic Operations using Manim
 
-#I'm still learning how to code and using Manim 
+#I'm still learning how to use Manim and also python
 #Expect some issues and bad code :P
 
 from random import randint
